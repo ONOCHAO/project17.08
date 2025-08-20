@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Стоматология — Добавление посетителя</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e9f3f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .form-container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+        input, select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 18px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button, .nav-button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+        button:hover,
+        .nav-button:hover {
+            background-color: #219150;
+        }
+        .nav-links {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Добавить посетителя</h2>
+        <form method="POST" action="/add-client">
+            <input type="text" name="name" placeholder="Имя" required>
+            
+            <select name="status" required>
+                <option value="">Выберите статус</option>
+                <option value="Новый">Новый</option>
+                <option value="Ждёт приёма">Ждёт приёма</option>
+                <option value="Записался на запись">Записался на запись</option>
+                <option value="Принят">Принят</option>
+            </select>
+
+            <input type="number" name="check" placeholder="Чек (₸)" required min="0">
+
+            <button type="submit">Добавить</button>
+        </form>
+
+        <div class="nav-links">
+            <a href="http://127.0.0.1:5001/add-note" class="nav-button">➕ Добавить заметку</a>
+            <a href="http://127.0.0.1:5001/delete-client" class="nav-button">🗑️ Удалить клиента</a>
+            <a href="http://127.0.0.1:5001/delete-note" class="nav-button">🗑️ Удалить заметку</a>
+        </div>
+    </div>
+</body>
+</html>
